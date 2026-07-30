@@ -81,6 +81,7 @@ export default function PasteForm({
             <span className="suggestion__label">{clipboardFoundLabel}</span>
             <span className="suggestion__preview">{suggestion}</span>
           </span>
+          <span className="suggestion__arrow" aria-hidden="true">→</span>
         </button>
       )}
 

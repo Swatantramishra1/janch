@@ -335,20 +335,30 @@ a:focus-visible {
 }
 
 .suggestion {
+  appearance: none;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  align-items: flex-start;
+  gap: 0.6rem;
+  width: 100%;
   margin-bottom: 0.75rem;
-  padding: 0.7rem 0.9rem;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  color: inherit;
   border: 1.5px dashed var(--ink-soft);
+  border-radius: 0;
   background: #fbfcf9;
   cursor: pointer;
   text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.suggestion:active {
+  background: var(--paper-edge);
 }
 
 .suggestion__body {
   min-width: 0;
+  flex: 1;
 }
 
 .suggestion__label {
@@ -358,11 +368,21 @@ a:focus-visible {
   text-transform: uppercase;
   color: var(--ink-soft);
   display: block;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.25rem;
 }
 
 .suggestion__preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.suggestion__arrow {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
 }
