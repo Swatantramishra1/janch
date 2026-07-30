@@ -1,0 +1,335 @@
+:root {
+  --paper: #eef0ea;
+  --paper-edge: #e3e6dd;
+  --ink: #16130f;
+  --ink-soft: #4d4a43;
+  --rule: #c6ccbf;
+  --stamp-red: #a81e14;
+  --stamp-amber: #8a5300;
+  --stamp-green: #17614a;
+
+  --display: "Baloo 2", "Noto Sans Devanagari", system-ui, sans-serif;
+  --body: "Noto Sans Devanagari", system-ui, sans-serif;
+  --mono: "Courier Prime", ui-monospace, "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Ledger ruling: the page reads as an official form, not an app screen. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 43px,
+    color-mix(in srgb, var(--rule) 40%, transparent) 43px 44px
+  );
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+  padding-bottom: max(4rem, env(safe-area-inset-bottom));
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1.5px solid var(--ink);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.lede {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+
+.sub {
+  margin: 0 0 1.5rem;
+  color: var(--ink-soft);
+}
+
+/* --- paste form --- */
+.field {
+  display: block;
+  width: 100%;
+  min-height: 9rem;
+  padding: 0.9rem;
+  font: inherit;
+  color: var(--ink);
+  background: #fbfcf9;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  resize: vertical;
+}
+
+.field:focus-visible,
+.btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--stamp-amber);
+  outline-offset: 2px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  padding: 0.85rem 1.4rem;
+  font-family: var(--display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--paper);
+  background: var(--ink);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+.btn--ghost {
+  color: var(--ink);
+  background: transparent;
+  border: 1.5px solid var(--ink);
+}
+
+.note {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.hairline {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0 1.25rem;
+}
+
+/* --- the signature: a verdict pressed onto the page like an ink stamp --- */
+.stamp {
+  --stamp: var(--ink);
+  position: relative;
+  margin: 0 0 1.75rem;
+  padding: 1.5rem 1.25rem 1.25rem;
+  color: var(--stamp);
+  border: 3px double var(--stamp);
+  border-radius: 3px;
+  transform: rotate(-1.2deg);
+  animation: press 320ms cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+
+.stamp[data-verdict="likely_scam"] {
+  --stamp: var(--stamp-red);
+}
+.stamp[data-verdict="be_careful"] {
+  --stamp: var(--stamp-amber);
+}
+.stamp[data-verdict="no_signals"] {
+  --stamp: var(--stamp-green);
+}
+
+.stamp__label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.stamp__verdict {
+  display: block;
+  margin: 0.15rem 0 0.35rem;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 11vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.stamp__gloss {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+@keyframes press {
+  from {
+    opacity: 0;
+    transform: rotate(-1.2deg) scale(1.08);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-1.2deg) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp {
+    animation: none;
+  }
+}
+
+/* --- verdict body --- */
+.reason {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.action {
+  padding: 0.9rem 1rem;
+  background: #fbfcf9;
+  border-left: 5px solid var(--ink);
+  font-size: 1.1rem;
+}
+
+.action__label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.2rem;
+}
+
+/* Domains are set in mono on purpose: a lookalike host is only obvious when the
+   characters line up. */
+.evidence {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  word-break: break-all;
+}
+
+.evidence li {
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.evidence b {
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.quoted {
+  margin: 1.5rem 0 0;
+  padding: 0.75rem 0.9rem;
+  background: color-mix(in srgb, var(--paper-edge) 70%, transparent);
+  border: 1px solid var(--rule);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 9rem;
+  overflow: auto;
+}
+
+.report {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+.report a {
+  color: var(--ink);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.error {
+  padding: 1rem;
+  border: 1.5px solid var(--stamp-red);
+  color: var(--stamp-red);
+  background: #fbfcf9;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+
+.steps li {
+  margin-bottom: 0.5rem;
+}
+
+.lang {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.lang__select {
+  font: inherit;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+
+.lang__select:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
