@@ -79,6 +79,8 @@ export type UIStrings = {
   errorUnknown: string;
   metaTitle: string;
   metaDescription: string;
+  installCta: string;
+  clipboardFound: string;
 };
 
 // Every string in the app, in every supported language.
@@ -128,6 +130,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "कुछ गड़बड़ हो गई। थोड़ी देर बाद फिर कोशिश करें।",
     metaTitle: "जाँच — मैसेज की जाँच करें",
     metaDescription: "किसी भी शक वाले मैसेज को शेयर करें और अपनी भाषा में जवाब पाएँ।",
+    installCta: "ऐप इंस्टॉल करें",
+    clipboardFound: "क्लिपबोर्ड में मैसेज मिला",
   },
   en: {
     wordmark: "Jaanch",
@@ -172,6 +176,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "Something went wrong. Please try again shortly.",
     metaTitle: "Jaanch — Message check",
     metaDescription: "Share any suspicious message and get an answer in your language.",
+    installCta: "Install app",
+    clipboardFound: "Message found in clipboard",
   },
   bn: {
     wordmark: "যাচাই",
@@ -216,6 +222,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "কিছু ভুল হয়েছে। কিছুক্ষণ পরে আবার চেষ্টা করুন।",
     metaTitle: "যাচাই — মেসেজ যাচাই করুন",
     metaDescription: "যেকোনো সন্দেহজনক মেসেজ শেয়ার করুন এবং আপনার ভাষায় উত্তর পান।",
+    installCta: "অ্যাপ ইনস্টল করুন",
+    clipboardFound: "ক্লিপবোর্ডে মেসেজ পাওয়া গেছে",
   },
   te: {
     wordmark: "పరిశీలన",
@@ -260,6 +268,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "ఏదో తప్పు జరిగింది. కొద్దిసేపు తర్వాత మళ్లీ ప్రయత్నించండి.",
     metaTitle: "పరిశీలన — మెసేజ్‌ని పరిశీలించండి",
     metaDescription: "అనుమానాస్పద మెసేజ్‌ని షేర్ చేయండి మరియు మీ భాషలో సమాధానం పొందండి.",
+    installCta: "యాప్ ఇన్‌స్టాల్ చేయండి",
+    clipboardFound: "క్లిప్‌బోర్డ్‌లో మెసేజ్ కనిపించింది",
   },
   mr: {
     wordmark: "तपासणी",
@@ -304,6 +314,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "काहीतरी चूक झाली. थोड्या वेळाने पुन्हा प्रयत्न करा.",
     metaTitle: "तपासणी — मेसेज तपासा",
     metaDescription: "कोणताही संशयास्पद मेसेज शेअर करा आणि तुमच्या भाषेत उत्तर मिळवा.",
+    installCta: "अ‍ॅप इंस्टॉल करा",
+    clipboardFound: "क्लिपबोर्डमध्ये मेसेज सापडला",
   },
   ta: {
     wordmark: "சரிபார்",
@@ -348,6 +360,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "ஏதோ தவறு நடந்துவிட்டது. சிறிது நேரம் கழித்து மீண்டும் முயற்சிக்கவும்.",
     metaTitle: "சரிபார் — செய்தியை சரிபார்க்கவும்",
     metaDescription: "சந்தேகமான எந்த செய்தியையும் பகிரவும், உங்கள் மொழியில் பதில் பெறவும்.",
+    installCta: "ஆப்பை நிறுவவும்",
+    clipboardFound: "கிளிப்போர்டில் செய்தி கிடைத்தது",
   },
   gu: {
     wordmark: "તપાસ",
@@ -392,6 +406,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "કંઈક ખોટું થયું. થોડી વાર પછી ફરી પ્રયાસ કરો.",
     metaTitle: "તપાસ — મેસેજ તપાસો",
     metaDescription: "કોઈપણ શંકાસ્પદ મેસેજ શેર કરો અને તમારી ભાષામાં જવાબ મેળવો.",
+    installCta: "એપ ઇન્સ્ટોલ કરો",
+    clipboardFound: "ક્લિપબોર્ડમાં મેસેજ મળ્યો",
   },
   ur: {
     wordmark: "جانچ",
@@ -436,6 +452,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "کچھ خرابی ہو گئی۔ کچھ دیر بعد دوبارہ کوشش کریں۔",
     metaTitle: "جانچ — پیغام کی جانچ کریں",
     metaDescription: "کسی بھی مشکوک پیغام کو شیئر کریں اور اپنی زبان میں جواب پائیں۔",
+    installCta: "ایپ انسٹال کریں",
+    clipboardFound: "کلپ بورڈ میں پیغام ملا",
   },
   kn: {
     wordmark: "ಪರಿಶೀಲನೆ",
@@ -480,6 +498,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "ಏನೋ ತಪ್ಪಾಗಿದೆ. ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
     metaTitle: "ಪರಿಶೀಲನೆ — ಸಂದೇಶವನ್ನು ಪರಿಶೀಲಿಸಿ",
     metaDescription: "ಯಾವುದೇ ಸಂಶಯಾಸ್ಪದ ಸಂದೇಶವನ್ನು ಹಂಚಿಕೊಳ್ಳಿ ಮತ್ತು ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ ಉತ್ತರ ಪಡೆಯಿರಿ.",
+    installCta: "ಆ್ಯಪ್ ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿ",
+    clipboardFound: "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ನಲ್ಲಿ ಸಂದೇಶ ಸಿಕ್ಕಿದೆ",
   },
   ml: {
     wordmark: "പരിശോധന",
@@ -524,6 +544,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "എന്തോ കുഴപ്പം സംഭവിച്ചു. കുറച്ച് സമയത്തിന് ശേഷം വീണ്ടും ശ്രമിക്കുക.",
     metaTitle: "പരിശോധന — സന്ദേശം പരിശോധിക്കുക",
     metaDescription: "സംശയാസ്പദ സന്ദേശം പങ്കിടുകയും നിങ്ങളുടെ ഭാഷയിൽ മറുപടി നേടുകയും ചെയ്യുക.",
+    installCta: "ആപ്പ് ഇൻസ്റ്റാൾ ചെയ്യുക",
+    clipboardFound: "ക്ലിപ്പ്ബോർഡിൽ സന്ദേശം കണ്ടെത്തി",
   },
   pa: {
     wordmark: "ਜਾਂਚ",
@@ -568,6 +590,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "ਕੁਝ ਗੜਬੜ ਹੋ ਗਈ। ਥੋੜੀ ਦੇਰ ਬਾਅਦ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
     metaTitle: "ਜਾਂਚ — ਸੁਨੇਹਾ ਜਾਂਚੋ",
     metaDescription: "ਕਿਸੇ ਵੀ ਸ਼ੱਕੀ ਸੁਨੇਹੇ ਨੂੰ ਸ਼ੇਅਰ ਕਰੋ ਅਤੇ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਜਵਾਬ ਪਾਓ।",
+    installCta: "ਐਪ ਇੰਸਟਾਲ ਕਰੋ",
+    clipboardFound: "ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਸੁਨੇਹਾ ਮਿਲਿਆ",
   },
   or: {
     wordmark: "ଯାଞ୍ଚ",
@@ -612,6 +636,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "କିଛି ଗଡ଼ବଡ଼ ହୋଇଗଲା। କିଛି ସମୟ ପରେ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।",
     metaTitle: "ଯାଞ୍ଚ — ମେସେଜ ଯାଞ୍ଚ କରନ୍ତୁ",
     metaDescription: "ଯେକୌଣସି ସନ୍ଦେହଜନକ ମେସେଜ ସେୟାର କରନ୍ତୁ ଏବଂ ଆପଣଙ୍କ ଭାଷାରେ ଉତ୍ତର ପାଆନ୍ତୁ।",
+    installCta: "ଆପ ଇନଷ୍ଟଲ କରନ୍ତୁ",
+    clipboardFound: "କ୍ଲିପବୋର୍ଡରେ ମେସେଜ ମିଳିଲା",
   },
   as: {
     wordmark: "পৰীক্ষা",
@@ -656,6 +682,8 @@ export const STRINGS: Record<LangCode, UIStrings> = {
     errorUnknown: "কিবা এটা ভুল হ’ল। কিছু সময়ৰ পিছত পুনৰ চেষ্টা কৰক।",
     metaTitle: "পৰীক্ষা — বাৰ্তা পৰীক্ষা কৰক",
     metaDescription: "যিকোনো সন্দেহজনক বাৰ্তা শ্বেয়াৰ কৰক আৰু আপোনাৰ ভাষাত উত্তৰ লাভ কৰক।",
+    installCta: "এপ ইনষ্টল কৰক",
+    clipboardFound: "ক্লিপব’ৰ্ডত বাৰ্তা পোৱা গ’ল",
   },
 };
 

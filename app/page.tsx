@@ -1,4 +1,5 @@
 import PasteForm from "@/components/PasteForm";
+import InstallPrompt from "@/components/InstallPrompt";
 import { readLang } from "@/lib/language";
 import { strings } from "@/lib/i18n";
 
@@ -17,6 +18,7 @@ export default async function Home() {
         submit={s.submit}
         submitBusy={s.submitBusy}
         paste={s.paste}
+        clipboardFoundLabel={s.clipboardFound}
       />
 
       <hr className="hairline" />
@@ -24,6 +26,7 @@ export default async function Home() {
       <h2 className="eyebrow" style={{ display: "block", marginBottom: "0.75rem" }}>
         {s.installTitle}
       </h2>
+      <InstallPrompt label={s.installCta} />
       <ol className="steps">
         <li>{s.installStep1}</li>
         <li>{s.installStep2}</li>
